@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Login</title>
+  </head>
+  <body>
+    <main id="layout">
+      <section class="center">
+        <div class="container">
+          <div class="cadaster-login" id="cadaster-login">
+            <h1>Lorem Impsum</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet earum voluptates atque voluptatem labore maxime ullam, consequatur repellat animi, doloribus, ut aliquid tenetur vero laboriosam odit quia molestias dicta dignissimos?</p>
+            <span id="showCadaster" onclick="showCadaster()">Cadastra-se</span>
+          </div>
+          <div class="box-cadaster" id="box-cadaster">
+            <h2>Cadastro</h2>
+            <form>
+              <label>
+                <input type="text" name="" id="user" placeholder="Digite seu nome de Usuário:">
+              </label>
+              <label>
+                <input type="password" name="" id="password" placeholder="Digite sua senha">
+              </label>
+              <label>
+                <input type="password" name="" id="rePassword" placeholder="Digite novamente a senha">
+              </label>
+              <div>
+                <span onclick="submit()">Cadastrar</span>
+              </div>
+            </form>
+          </div><!--box-cadaster-->
+          <div class="box-login" id="box-login">
+            <div class="icon-user">
+              <i class="fas fa-users"></i>
+            </div>
+            <h2>Login</h2>
+            <form>
+              <label>
+                <input type="text" name="" id="loginUser" placeholder="Digite seu nome de Usuário:">
+              </label>
+              <label>
+                <input type="password" name="" id="loginPassword" placeholder="Digite sua senha">
+              </label>
+              <div>
+                <span onclick="login()">Entrar</span>
+              </div>
+            </form>
+          </div>
+        </div><!--container-->
+      </section><!--center-->
+    </main>
+
+
+
+    <footer>
+      <p>Imagem de <a href="https://pixabay.com/pt/users/enriquelopezgarre-3764790/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5055384">enriquelopezgarre</a> por <a href="https://pixabay.com/pt/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5055384">Pixabay</a></p>
+    </footer>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
