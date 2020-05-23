@@ -30,8 +30,7 @@ section .container {
   height: 500px;
   border-radius: 50px;
 }
-main{
-}
+
 /*Home*/
 section .container .cadaster-login {
   text-align: center;
@@ -151,4 +150,86 @@ section .container .box-login span{
   border-radius: 50px;
   background-color: #4C7385;
   color: #BEF3F8;
+}
+/**/
+section.cont-user{
+  display: none;
+}
+section.cont-user .boxContent{
+  display: flex;
+  flex-direction: column;
+  width: 78%;
+}
+section.cont-user .center{
+  max-width: 1200px;
+  display: flex;
+}
+section.cont-user .dadoPerson{
+  display: flex;
+  background-color: rgba(206, 251, 255, 0.829);
+  width: 100%;
+  margin: 10px 0;
+  height: 155px;
+  border-radius: 50px;
+}
+section.cont-user .photoPerfil{
+  background-color: gray;
+  width: 100px;
+  height: 100px;
+  border-radius: 50% ;
+  margin: 23px 0 23px 10px;
+}
+section.cont-user .boxInformation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+section.cont-user #nameUser{
+  font-size: 30px ;
+  color: rgb(33, 54, 63);  
+}
+.information {
+  width: 70%;
+  background-color: rgba(167, 167, 167, 0.692);
+  border-radius: 30px;
+  height: 25px;
+  margin: 2px 0;
+}
+section.cont-user .moreInformation{
+  background-color: rgba(206, 251, 255, 0.829);
+  width: 22%;
+  margin: 10px 8px;
+  height: 650px;
+  border-radius: 50px;
+}
+section.cont-user .moreInformation p{
+  color: rgb(33, 54, 63);
+  padding: 25px 4%;
+}
+section.cont-user .mainBox{
+  background-color: rgba(206, 251, 255, 0.829);
+  width: 100%;
+  margin: 10px 0;
+  height: 472px;
+  border-radius: 50px;
+}
+section.cont-user .mainBox .middle{
+  margin: 70px 0;
+}
+section.cont-user .mainBox .information{
+  margin: 10px auto;
+}
+/*Footer*/
+footer {
+  margin-top: 5%;
+  text-align: center;
+}
+footer p{
+  color: rgb(121, 0, 111);
+  font-weight: bold;
+}
+footer a{
+  color: rgb(6, 253, 26);
+  text-decoration: underline;
 }
