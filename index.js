@@ -1,4 +1,5 @@
 const express = require("express");
+// Colocar uma foto que possa editar o meio ficar efeito de um pc dentro de outro.
 const users = require("./routers/user.js")
 const { promises } = require("fs")
 const app = express();
@@ -14,8 +15,8 @@ const file = "./routers/users.json"
 
 app.use(express.json());
 app.use("/user", users);
-app.use(express.static(path.join(__dirname, "pulbic")));
-app.set('views', path.join(__dirname, "public"));//Informar que é html
+app.use(express.static(path.join(__dirname, "public/")));
+app.set('views', path.join(__dirname, "public"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
