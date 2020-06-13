@@ -44,7 +44,16 @@ function showCadaster(){
   
 }
 
-
+async function validationCadaster(user, pswd) {
+  
+  let response = await sendData(user, pswd);
+  if(response === 400) {
+    alert("Seu usuário já existe no Banco de Dados");
+  }else {
+    showCadaster();
+    alert("Cadastro no Sistema")
+  }
+}
 
 function submit(){
   let cadasterUser = document.querySelector('#user');
@@ -60,9 +69,9 @@ function submit(){
       if(cadasterPwd.value !== cadasterRePwd.value){
         alert("As senhas digitadas não são iguais - Lorem Impsum");
       }else{
-        alert("Cadastro no Sistema")
-        showCadaster();
-        sendData(cadasterUser.value, cadasterPwd.value);// Fazer um objeto com person: name e lastname e user e password
+        validationCadaster(cadasterUser.value, cadasterPwd.value);
+        
+        // Fazer um objeto com person: name e lastname e user e password
       }
     }
   }
@@ -73,20 +82,19 @@ function submit(){
 function login(){
   let loginUser = document.querySelector('#loginUser');
   let loginPswd = document.querySelector('#loginPassword');
+  receiveData(loginUser.value, loginPswd.value);
 
-  if(loginUser.value !== dadoUser){
+  if(loginUser.value !== loginUser.value){
     alert("Login Incorreto - Lorem");
   }else{
-    if(loginPswd.value !== dadoPswd){
+    if(loginPswd.value !== loginPswd.value){
       alert("Senha Incorreta - Lorem");
     }else{
       alert("Login Efetuado com sucesso");
       showCadaster();
-      dadoPswd = null;
       const nameUser = document.querySelector("#nameUser");
-      nameUser.innerHTML = dadoUser
+      nameUser.innerHTML = loginUser.value
 
-      dadoUser = null;
       
       
     }

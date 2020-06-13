@@ -25,18 +25,21 @@ app.set("view engine", "html");
 app.get('/', (req, res) => {
    try {
       res.render("index.html");
-      // res.render("index.html")
       
    } catch (error) {
       console.log("Requisition !!! " + error)
       res.status(400).send("Erro");
    }
 })
+/** Socket IO permite a interação com Chat */
 io.on('connection', (socket) => {
    console.log('a user connected');
+   socket.on("disconnect", () => {
+      console.log("user Disconnected")
+   })
  });
 
-app.listen(port, async () => {
+http.listen(port, async () => {
    try {
       let data = await readFile(file, "utf8");
    } catch (error) {

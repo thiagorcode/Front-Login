@@ -21,29 +21,24 @@ router.post("/register", async (req, res) => {
       let loginValidation = newUser.account.filter(validation => {
          return data.user.login === validation.user.login;
       })
-      console.log(loginValidation)
-
-      // Verifica se usuário existe
-      // Aplicar alguma proprieda que ao verificar que o usuário existe apresenta para o usuário o usuário é existente.
+      /* Aplicar mesma validação no campo de login */
       if(loginValidation.length !== 0){
          console.log("Usuário existente");
-         res.end()
+         res.status(400)
+         res.end();
 
-      }else {
+      } else {
          console.log("Usuário Não existe")
          register = {id: newUser.nextId++, ...data};
          newUser.account.push(register);
-         res.end();
+         
          writeFile(file, JSON.stringify(newUser), err => {
-         res.status(400);
-      })
+            res.status(400);
+         })
+         res.status(200);
+         res.end();
       }
 
-      
-
-      
-      
-      
 
    } catch (error) {
       res.status(400).send("Algum erro "+ error)
@@ -51,11 +46,21 @@ router.post("/register", async (req, res) => {
    }
 });
 
-router.get("/validation", async (req, res) => {
+router.post("/validation", async (req, res) => {
+   let {account} = req.body;
    try {
+      let login =  await readOneFile();
+      let validationLogin = login.account.filter(validation => {
+         return validation.user.login === account.user;
+      }).filter(validationPswd => {
+         validationPswd.user.pswd === account.pswd
+      })
+      console.log(validationLogin);
+
       
+      res.end()
    } catch (error) {
-      
+      console.log("Apresentou um erro: " + error);
    }
 })
 

@@ -1,4 +1,8 @@
 @charset "utf-8";
+:root{
+  --color-p:#044b74;
+  --color-h1:#032d46;
+}
 *{
   margin: 0;
   padding: 0;
@@ -27,7 +31,7 @@ section.center{
   align-items: center;
 }
 section .container {
-  background-color: rgba(206, 251, 255, 0.829);
+  background-color: #c9ccd39d;
   position: relative;
   width: 80%;
   margin: 0 auto;
@@ -42,14 +46,14 @@ section .container .cadaster-login {
   padding: 40px 5%;
 }
 section .container .cadaster-login h1 {
-  color:#4C7385 ;
+  color: var(--color-h1);
   font-size: 40px;
   padding: 30px 0;
 }
 section .container .cadaster-login p {
   text-align: justify;
   font-size: 16px;
-  color: rgb(48, 104, 104);
+  color: var(--color-p);
 }
 section .container .cadaster-login button {
   display: block;
@@ -60,8 +64,9 @@ section .container .cadaster-login button {
   margin-top: 50px;
   padding: 15px 15px;
   border-radius: 50px;
-  background-color: #4C7385;
-  color: #BEF3F8;
+  background-color: #021e2e;
+  color: #def3f5;
+  border: 0;
 }
 /**/
 /*Cadastro*/
@@ -73,7 +78,7 @@ section .container .box-cadaster {
 section .container .box-cadaster h2{
   font-size: 34px;
   padding: 30px;
-  color:#4C7385 ;
+  color: var(--color-h1) ;
 }
 section .container .box-cadaster label{
   display: block;
@@ -94,7 +99,7 @@ section .container .box-cadaster input:hover{
   border-bottom: 1px solid rgb(22, 56, 71);
   background-color: rgba(217, 245, 248, 0.603);
 }
-section .container .box-cadaster span{
+section .container .box-cadaster button{
   display: block;
   width: 50%;
   margin: 0 auto;
@@ -103,8 +108,9 @@ section .container .box-cadaster span{
   margin-top: 25px;
   padding: 15px 15px;
   border-radius: 50px;
-  background-color: #4C7385;
+  background-color: var(--color-h1);
   color: #BEF3F8;
+  border: 0;
 }
 /**/
 section .container .box-login {
@@ -127,7 +133,7 @@ section .container .box-login i {
 section .container .box-login h2{
   font-size: 34px;
   padding: 15px;
-  color:#4C7385 ;
+  color:var(--color-h1) ;
 }
 section .container .box-login label{
   display: block;
@@ -153,7 +159,7 @@ section .container .box-login span{
   margin-top: 25px;
   padding: 15px 15px;
   border-radius: 50px;
-  background-color: #4C7385;
+  background-color: var(--color-h1);
   color: #BEF3F8;
 }
 /**/
