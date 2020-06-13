@@ -21,14 +21,19 @@ body {
   background-position: 50% 25%;
   background-attachment: fixed;
 }
+section.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 section .container {
   background-color: rgba(206, 251, 255, 0.829);
   position: relative;
   width: 80%;
   margin: 0 auto;
-  margin-top: 12%;
   height: 500px;
   border-radius: 50px;
+  
 }
 
 /*Home*/
@@ -46,7 +51,7 @@ section .container .cadaster-login p {
   font-size: 16px;
   color: rgb(48, 104, 104);
 }
-section .container .cadaster-login span {
+section .container .cadaster-login button {
   display: block;
   width: 50%;
   margin: 0 auto;

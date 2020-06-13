@@ -13,6 +13,7 @@ async function readOneFile() {
  }
 
 router.post("/register", async (req, res) => {
+   console.log(req.body)
    try {
       let register = null;
       let newUser =  await readOneFile();
@@ -20,12 +21,12 @@ router.post("/register", async (req, res) => {
 
       register = {id: newUser.nextId++, ...data};
       newUser.users.push(register);
-      
+      res.end();
       writeFile(file, JSON.stringify(newUser), err => {
          res.status(400);
       })
-      res.send("Cadastro feito!!");
-      res.end();
+      
+      
 
    } catch (error) {
       res.status(400).send("Algum erro "+ error)

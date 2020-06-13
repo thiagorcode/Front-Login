@@ -1,2 +1,5 @@
 # Front-Login
- Desenvolvido o front-end de uma tela de login com HTML, CSS e JS puro.
+
+## Sobre
+
+ Realizar o desenvolvimento de uma tela de login e fazer uma incrementação de um chat.

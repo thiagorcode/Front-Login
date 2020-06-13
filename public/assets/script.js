@@ -1,19 +1,20 @@
-
 let cont = 1;
-let dadoUser = null;
-let dadoPswd = null;
 
-// function start(){
-  // preventSubmit();
-// }
 
-// function preventSubmit(){
-//   function preventforSubmit(event){
-//     event.preventDefault();
-//   }
-//   var form = document.querySelector('form');
-//   form.addEventListener('submit', preventforSubmit)
-// }
+start();
+function start(){
+  const cadaster = document.querySelector("#showCadaster")
+  preventSubmit();
+  cadaster.addEventListener("click", showCadaster)
+}
+
+function preventSubmit(){
+  function preventforSubmit(event){
+    event.preventDefault();
+  }
+  const form = document.querySelector('form');
+  form.addEventListener('submit', preventforSubmit)
+ }
 
 function showCadaster(){
   let ocultHome = document.querySelector('#cadaster-login');
@@ -21,6 +22,8 @@ function showCadaster(){
   let viwerLogin = document.querySelector("#box-login");
   let layout = document.querySelector('#layout');
   const menuUser = document.querySelector("#contUser");
+  const buttonSubmit = document.querySelector("#submit")
+
   switch (cont){
     case 1:
       ocultHome.style.display = "none";
@@ -37,8 +40,11 @@ function showCadaster(){
   }
   
   cont++;
+  buttonSubmit.addEventListener("click", submit)
   
 }
+
+
 
 function submit(){
   let cadasterUser = document.querySelector('#user');
@@ -55,22 +61,14 @@ function submit(){
         alert("As senhas digitadas não são iguais - Lorem Impsum");
       }else{
         alert("Cadastro no Sistema")
-        bdUser(cadasterUser.value, cadasterPwd.value);
         showCadaster();
+        sendData(cadasterUser.value, cadasterPwd.value);
       }
     }
   }
   
 }
 
-function bdUser(user, pswd){
-  if(user !== "" && pswd !== ""){
-    dadoUser = user;
-    dadoPswd = pswd;
-  }else{alert("Dados incorretos")}
-  
-
-}
 
 function login(){
   let loginUser = document.querySelector('#loginUser');

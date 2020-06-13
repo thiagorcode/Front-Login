@@ -13,12 +13,14 @@ const port = 3000;
 
 const file = "./routers/users.json"
 
+app.use(express.urlencoded());
 app.use(express.json());
 app.use("/user", users);
 app.use(express.static(path.join(__dirname, "public/")));
 app.set('views', path.join(__dirname, "public"));
 app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
+
 
 app.get('/', (req, res) => {
    try {
