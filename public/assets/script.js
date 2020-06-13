@@ -62,7 +62,7 @@ function submit(){
       }else{
         alert("Cadastro no Sistema")
         showCadaster();
-        sendData(cadasterUser.value, cadasterPwd.value);
+        sendData(cadasterUser.value, cadasterPwd.value);// Fazer um objeto com person: name e lastname e user e password
       }
     }
   }

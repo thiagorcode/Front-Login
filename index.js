@@ -42,7 +42,7 @@ app.listen(port, async () => {
    } catch (error) {
       const initialJson = {
          nextId: 1,
-         users: [
+         account: [
 
          ]
       }

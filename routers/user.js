@@ -13,18 +13,35 @@ async function readOneFile() {
  }
 
 router.post("/register", async (req, res) => {
-   console.log(req.body)
    try {
       let register = null;
       let newUser =  await readOneFile();
       let data = req.body;
 
-      register = {id: newUser.nextId++, ...data};
-      newUser.users.push(register);
-      res.end();
-      writeFile(file, JSON.stringify(newUser), err => {
+      let loginValidation = newUser.account.filter(validation => {
+         return data.user.login === validation.user.login;
+      })
+      console.log(loginValidation)
+
+      // Verifica se usuário existe
+      // Aplicar alguma proprieda que ao verificar que o usuário existe apresenta para o usuário o usuário é existente.
+      if(loginValidation.length !== 0){
+         console.log("Usuário existente");
+         res.end()
+
+      }else {
+         console.log("Usuário Não existe")
+         register = {id: newUser.nextId++, ...data};
+         newUser.account.push(register);
+         res.end();
+         writeFile(file, JSON.stringify(newUser), err => {
          res.status(400);
       })
+      }
+
+      
+
+      
       
       
 
@@ -33,5 +50,13 @@ router.post("/register", async (req, res) => {
       
    }
 });
+
+router.get("/validation", async (req, res) => {
+   try {
+      
+   } catch (error) {
+      
+   }
+})
 
 module.exports = router;
