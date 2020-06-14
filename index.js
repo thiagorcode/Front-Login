@@ -1,5 +1,5 @@
 const express = require("express");
-// Colocar uma foto que possa editar o meio ficar efeito de um pc dentro de outro.
+// Fazer gravação desenvolvendo
 const users = require("./routers/user.js")
 const { promises } = require("fs")
 const app = express();
